@@ -1,0 +1,21 @@
+# Database Configuration
+database:
+  host: localhost
+  user: arindam
+  password: Arindam@81
+  database: flights_db
+
+# API Configuration
+api:
+  key: 21f063724d1de3adf3c781d0f85f6330
+  url: http://api.aviationstack.com/v1/flights
+
+# Pipeline Configuration
+pipeline:
+  data_dir: data
+  raw_file: flights.csv
+  cleaned_file: cleaned_flights.csv
+
+# Dashboard Configuration
+dashboard:
+  port

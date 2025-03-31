@@ -3,3 +3,5 @@ requests
 mysql-connector-python
 streamlit
 pytest
+pyyaml
+matplotlib
