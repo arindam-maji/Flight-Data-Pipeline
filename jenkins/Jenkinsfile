@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Repository') {
+            steps { git 'https://github.com/arindam-maji/Flight-Data-Pipeline.git' }
+        }
+        stage('Build Docker Image') {
+            steps { sh 'docker build -t flight-data-pipeline .' }
+        }
+        stage('Run ETL Pipeline in Docker') {
+            steps { sh 'docker run --rm flight-data-pipeline' }
+        }
+        stage('Deploy Dashboard') {
+            steps {
+                sh 'docker run -d -p 8501:8501 flight-data-pipeline streamlit run dashboard.py'
+            }
+        }
+    }
+}
